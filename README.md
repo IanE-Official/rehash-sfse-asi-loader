@@ -49,7 +49,7 @@ git submodule update --remote
 
 ### 📦 Deployment
 
-To get started on adding custom deploy rules, check out the [default examples](Plugin/dist/rules).  
+To get started on adding custom deploy rules, check out the [default examples](Plugin/dist/rules).
 | action | usage |
 | --------- | ------------------------------------------------------------ |
 | `base` | set variable `params[0]` with value `params[1]` |
