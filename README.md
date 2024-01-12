@@ -1,4 +1,5 @@
 ![GitHub Release](https://img.shields.io/github/v/release/IanE-Official/rehash-sfse-asi-loader)
+[![Main/Release Build](https://github.com/IanE-Official/rehash-sfse-asi-loader/actions/workflows/build-push.yml/badge.svg)](https://github.com/IanE-Official/rehash-sfse-asi-loader/actions/workflows/build-push.yml)
 
 # 📑 SFSE ASI Loader
 
