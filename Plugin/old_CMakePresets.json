@@ -49,12 +49,7 @@
     },
     {
       "name": "REL",
-      "inherits": [
-        "common",
-        "vcpkg",
-        "win64",
-        "msvc"
-      ]
+      "inherits": ["common", "vcpkg", "win64", "msvc"]
     }
   ]
 }
