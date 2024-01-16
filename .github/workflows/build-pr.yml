@@ -21,6 +21,7 @@ env:
 
 jobs:
   cmake:
+    if: contains(github.event.pull_request.labels.*.name, 'ci-ready')
     runs-on: windows-latest
 
     # These steps assume an appropriate version of vcpkg is listed as a
