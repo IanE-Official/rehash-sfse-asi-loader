@@ -4,6 +4,8 @@ on:
   pull_request:
     branches:
       - 'main'
+  label:
+    types: [created]
 
 ###############################################################################
 # Add this section to your workflow file does not already have it to enable
