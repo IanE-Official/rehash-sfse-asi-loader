@@ -9,26 +9,26 @@ SFSE plugin which safely preloads ASI mods with logging forked from Doodlez by I
 
 - For the mod to work correctly, Install Starfield (Steam Edition), [Starfield Script Extender (SFSE)](https://www.nexusmods.com/starfield/mods/106), and [Address Library for SFSE Plugins](https://www.nexusmods.com/starfield/mods/3256).
 - Download latest compiled version from [NexusMods](https://www.nexusmods.com/starfield/mods/8055?tab=files) or my [Github Releases](https://github.com/IanE-Official/rehash-sfse-asi-loader/releases)
-- ***To use just place expand in your Starfield data directory or just copy the DLL to `{StarfieldDirectory}/Data/SFSE/Plugins/` and run the game***
+- **_To use just place expand in your Starfield data directory or just copy the DLL to `{StarfieldDirectory}/Data/SFSE/Plugins/` and run the game_**
 
 ## Get started from source
 
 ### ⚙ Requirements
 
 - [CMake](https://cmake.org/)
-    - Add this to your `PATH`
+  - Add this to your `PATH`
 - [DKUtil](https://github.com/gottyduke/DKUtil)
-    - Init & update with git submodule
+  - Init & update with git submodule
 - [SFSE](https://github.com/ianpatt/sfse)
-    - Init & update with git submodule
+  - Init & update with git submodule
 - [PowerShell](https://github.com/PowerShell/PowerShell/releases/latest)
-    - Runs scripts which automate building
+  - Runs scripts which automate building
 - [Vcpkg](https://github.com/microsoft/vcpkg)
-    - Add the environment variable `VCPKG_ROOT` with the value as the path to the folder containing vcpkg
+  - Add the environment variable `VCPKG_ROOT` with the value as the path to the folder containing vcpkg
 - [Visual Studio Community 2022](https://visualstudio.microsoft.com/)
-    - Desktop development with C++. Note that VSCode will not build properly.
+  - Desktop development with C++. Note that VSCode will not build properly.
 - [Starfield Steam Distribution](#-deployment)
-    - Add the environment variable `SFPath` with the value as the path to the game installation
+  - Add the environment variable `SFPath` with the value as the path to the game installation
 
 ### 💻 Register Visual Studio Community 2022 as a Generator
 
@@ -53,8 +53,9 @@ cd ..
 .\build-release.ps1
 ```
 
-> If you are building for a Starfield ***other than latest***, use ```git clone https://github.com/IanE-Official/rehash-sfse-asi-loader.git --branch {version} Plugin
-``` where {version} is set to the newest version of starfield you are trying to build for (currently 1.8.88).
+> If you are building for a Starfield **_other than latest_**, use ```git clone https://github.com/IanE-Official/rehash-sfse-asi-loader.git --branch {version} Plugin
+
+```where {version} is set to the newest version of starfield you are trying to build for (currently 1.8.88).
 
 ### 📦 Deployment
 
@@ -77,3 +78,4 @@ See [security.md](security.html)
 - [Ryan for his commonLibSSE code](https://github.com/Ryan-rsm-McKenzie/CommonLibSSE) which was referenced in DKUtil.
 - [ianpatt's starfield script extender](https://github.com/ianpatt/sfse).
 - [Original plugin template](https://github.com/gottyduke/PluginTemplate)
+```
