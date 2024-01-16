@@ -2,10 +2,9 @@ name: build-pr
 
 on:
   pull_request:
+    types: [ labeled ]
     branches:
       - 'main'
-  label:
-    types: [created]
 
 ###############################################################################
 # Add this section to your workflow file does not already have it to enable
