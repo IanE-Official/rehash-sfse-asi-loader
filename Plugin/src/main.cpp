@@ -25,9 +25,9 @@
 DLLEXPORT constinit auto SFSEPlugin_Version = []() noexcept {
 	SFSE::PluginVersionData data{};
 
-	data.PluginVersion(Plugin::Version); 
-	data.PluginName(Plugin::NAME); 
-	data.AuthorName(Plugin::AUTHOR); 
+	data.PluginVersion(Plugin::Version);
+	data.PluginName(Plugin::NAME);
+	data.AuthorName(Plugin::AUTHOR);
 	data.UsesSigScanning(true);
 	//data.UsesAddressLibrary(true);
 	data.HasNoStructUse(true);
