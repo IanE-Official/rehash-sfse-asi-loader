@@ -1,5 +1,6 @@
 [![GitHub Release](https://img.shields.io/github/v/release/IanE-Official/rehash-sfse-asi-loader)](https://github.com/IanE-Official/rehash-sfse-asi-loader/releases)
 [![Main/Release Build](https://github.com/IanE-Official/rehash-sfse-asi-loader/actions/workflows/build-push.yml/badge.svg)](https://github.com/IanE-Official/rehash-sfse-asi-loader/actions/workflows/build-push.yml)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FIanE-Official%2Frehash-sfse-asi-loader.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FIanE-Official%2Frehash-sfse-asi-loader?ref=badge_shield)
 
 # 📑 SFSE ASI Loader
 
@@ -67,6 +68,9 @@ This project bundles [DKUtil](https://github.com/gottyduke/DKUtil).
 ## 📖 License
 
 [MIT with conditions](LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FIanE-Official%2Frehash-sfse-asi-loader.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FIanE-Official%2Frehash-sfse-asi-loader?ref=badge_large)
 
 ## Security
 
