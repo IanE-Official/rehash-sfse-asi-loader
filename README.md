@@ -16,19 +16,19 @@ SFSE plugin which safely preloads ASI mods with logging forked from Doodlez by I
 ### ⚙ Requirements
 
 - [CMake](https://cmake.org/)
-    - Add this to your `PATH`
+  - Add this to your `PATH`
 - [DKUtil](https://github.com/gottyduke/DKUtil)
-    - Used for logging primarily; Init & update with git submodule
+  - Used for logging primarily; Init & update with git submodule
 - [SFSE](https://github.com/ianpatt/sfse)
-    - Init & update with git submodule
+  - Init & update with git submodule
 - [PowerShell](https://github.com/PowerShell/PowerShell/releases/latest)
-    - Runs scripts which automate building
+  - Runs scripts which automate building
 - [Vcpkg](https://github.com/microsoft/vcpkg)
-    - Handles non-submodule dependency packages
+  - Handles non-submodule dependency packages
 - [Visual Studio Community 2022](https://visualstudio.microsoft.com/)
-    - Desktop development with C++. **Note that VSCode will not build properly at this time.**
+  - Desktop development with C++. **Note that VSCode will not build properly at this time.**
 - [Starfield Steam Distribution](#-deployment)
-    - Add the environment variable `SFPath` with the value as the path to the game installation
+  - Add the environment variable `SFPath` with the value as the path to the game installation
 
 ### 💻 Register Visual Studio Community 2022 as a Generator
 
