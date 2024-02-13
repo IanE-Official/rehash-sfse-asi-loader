@@ -6,8 +6,8 @@ Use this section to tell people about which versions of your project are
 currently being supported with security updates.
 
 | Mod Version | Supported |
-| ----------- | ----------|
-|   ≥1.8.88   |     ✅    |
+| ----------- | --------- |
+| ≥1.8.88     | ✅        |
 
 ## Reporting a Vulnerability
 
