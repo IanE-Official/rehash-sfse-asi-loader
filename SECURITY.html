@@ -1076,70 +1076,26 @@ body .markdown-body
 .highlight .vi{color:teal}
 .highlight .il{color:#009999}
 .highlight .gc{color:#999;background-color:#EAF2F5}
-</style><title>README</title></head><body><article class="markdown-body"><p><a href="https://github.com/IanE-Official/rehash-sfse-asi-loader/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/IanE-Official/rehash-sfse-asi-loader" /></a>
-<a href="https://github.com/IanE-Official/rehash-sfse-asi-loader/actions/workflows/build-push.yml"><img alt="Main/Release Build" src="https://github.com/IanE-Official/rehash-sfse-asi-loader/actions/workflows/build-push.yml/badge.svg" /></a></p>
-<h1 id="sfse-asi-loader">📑 SFSE ASI Loader<a class="headerlink" href="#sfse-asi-loader" title="Permanent link"></a></h1>
-<p>SFSE plugin which safely preloads ASI mods with logging forked from Doodlez by Ian E.</p>
-<h2 id="to-install-use-this-mod-as-an-end-user">To install / use this mod as an end-user:<a class="headerlink" href="#to-install-use-this-mod-as-an-end-user" title="Permanent link"></a></h2>
-<ol>
-<li>For the mod to work correctly, Install Starfield (Steam Edition), <a href="https://www.nexusmods.com/starfield/mods/106">Starfield Script Extender (SFSE)</a>, and <a href="https://www.nexusmods.com/starfield/mods/3256">Address Library for SFSE Plugins</a>.</li>
-<li>Download latest compiled version from <a href="https://www.nexusmods.com/starfield/mods/8055?tab=files">NexusMods</a> or my <a href="https://github.com/IanE-Official/rehash-sfse-asi-loader/releases">Github Releases</a></li>
-<li><strong><em>To use just place expand in your Starfield data directory or just copy the DLL to <code>{StarfieldDirectory}/Data/SFSE/Plugins/</code> and run the game</em></strong></li>
-</ol>
-<h2 id="get-started-from-source">Get started from source<a class="headerlink" href="#get-started-from-source" title="Permanent link"></a></h2>
-<h3 id="requirements">⚙ Requirements<a class="headerlink" href="#requirements" title="Permanent link"></a></h3>
-<ul>
-<li><a href="https://cmake.org/">CMake</a></li>
-<li>Add this to your <code>PATH</code></li>
-<li><a href="https://github.com/gottyduke/DKUtil">DKUtil</a></li>
-<li>Used for logging primarily; Init &amp; update with git submodule</li>
-<li><a href="https://github.com/ianpatt/sfse">SFSE</a></li>
-<li>Init &amp; update with git submodule</li>
-<li><a href="https://github.com/PowerShell/PowerShell/releases/latest">PowerShell</a></li>
-<li>Runs scripts which automate building</li>
-<li><a href="https://github.com/microsoft/vcpkg">Vcpkg</a></li>
-<li>Handles non-submodule dependency packages</li>
-<li><a href="https://visualstudio.microsoft.com/">Visual Studio Community 2022</a></li>
-<li>Desktop development with C++. <strong>Note that VSCode will not build properly at this time.</strong></li>
-<li><a href="#-deployment">Starfield Steam Distribution</a></li>
-<li>Add the environment variable <code>SFPath</code> with the value as the path to the game installation</li>
-</ul>
-<h3 id="register-visual-studio-community-2022-as-a-generator">💻 Register Visual Studio Community 2022 as a Generator<a class="headerlink" href="#register-visual-studio-community-2022-as-a-generator" title="Permanent link"></a></h3>
-<ul>
-<li>Open <code>x64 Native Tools Command Prompt</code></li>
-<li>Run <code>cmake</code></li>
-<li>Close the cmd window</li>
-</ul>
-<h3 id="building">🔨 Building<a class="headerlink" href="#building" title="Permanent link"></a></h3>
-<p>To build from source (unrecommended):</p>
-<div class="highlight"><pre>git clone https://github.com/IanE-Official/rehash-sfse-asi-loader.git sfse-asi-loader
-cd sfse-asi-loader
-git submodule init
-git submodule update --remote
-cd extern/vcpkg
-./bootstrap-vcpkg.bat
-vcpkg integrate install
-cd ..
-cd ..
-.\build-release.ps1
-</pre></div>
-
-<blockquote>
-<p>If you are building for a Starfield <strong><em>other than the latest</em></strong>, use <code>git clone https://github.com/IanE-Official/rehash-sfse-asi-loader.git --branch {version} sfse-asi-loader</code>
-where {version} is set to the newest version of starfield you are trying to build for (currently 1.9.67).</p>
-</blockquote>
-<h3 id="deployment">📦 Deployment<a class="headerlink" href="#deployment" title="Permanent link"></a></h3>
-<p>Automated steps in Build-release.ps1 will automatically handle deployment.</p>
-<h3 id="dkutil-addon">➕ DKUtil addon<a class="headerlink" href="#dkutil-addon" title="Permanent link"></a></h3>
-<p>This project bundles <a href="https://github.com/gottyduke/DKUtil">DKUtil</a>.</p>
-<h2 id="license">📖 License<a class="headerlink" href="#license" title="Permanent link"></a></h2>
-<p><a href="/Users/iane/GitWorkspace/rehash-sfse-asi-loader/LICENSE">MIT with conditions</a></p>
-<h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link"></a></h2>
-<p>See <a href="/Users/iane/GitWorkspace/rehash-sfse-asi-loader/SECURITY.md">security.md</a></p>
-<h2 id="credits">❓ Credits<a class="headerlink" href="#credits" title="Permanent link"></a></h2>
-<ul>
-<li><a href="https://www.nexusmods.com/starfield/mods/857">Doodlez&rsquo;s original Mod</a> which this was forked from.</li>
-<li><a href="https://github.com/Ryan-rsm-McKenzie/CommonLibSSE">Ryan for his commonLibSSE code</a> which was referenced in DKUtil.</li>
-<li><a href="https://github.com/ianpatt/sfse">ianpatt&rsquo;s starfield script extender</a>.</li>
-<li><a href="https://github.com/gottyduke/PluginTemplate">Original plugin template</a></li>
-</ul></article></body></html>
+</style><title>SECURITY</title></head><body><article class="markdown-body"><h1 id="security-policy">Security Policy<a class="headerlink" href="#security-policy" title="Permanent link"></a></h1>
+<h2 id="supported-versions">Supported Versions<a class="headerlink" href="#supported-versions" title="Permanent link"></a></h2>
+<p>Use this section to tell people about which versions of your project are
+currently being supported with security updates.</p>
+<table>
+<thead>
+<tr>
+<th>Branch</th>
+<th>Supported</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>master</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reporting-a-vulnerability">Reporting a Vulnerability<a class="headerlink" href="#reporting-a-vulnerability" title="Permanent link"></a></h2>
+<p>Do not make a pull request to report a vulnerability!</p>
+<p><strong>Only</strong> To report a security vulnerability, go to </br>
+<a href="https://github.com/IanE-Official/rehash-sfse-asi-loader/security/advisories/new">https://github.com/IanE-Official/rehash-sfse-asi-loader/security/advisories/new</a> </br> or please email me at:</p>
+<p>vunerability [at] iane.dev</p></article></body></html>
