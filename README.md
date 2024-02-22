@@ -66,7 +66,7 @@ This project bundles [DKUtil](https://github.com/gottyduke/DKUtil).
 
 ## 📖 License
 
-[LICENSE](LICENSE)
+[MIT LICENSE with requirment of credit and restrictions on packaging DLLs directly with Mods.](LICENSE)
 
 ## Security
 
