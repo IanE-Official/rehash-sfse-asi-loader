@@ -66,11 +66,11 @@ This project bundles [DKUtil](https://github.com/gottyduke/DKUtil).
 
 ## 📖 License
 
-[MIT with conditions](LICENSE)
+[LICENSE](LICENSE)
 
 ## Security
 
-See [security.md](SECURITY.md)
+See [SECURITY.md](SECURITY.md)
 
 ## ❓ Credits
 

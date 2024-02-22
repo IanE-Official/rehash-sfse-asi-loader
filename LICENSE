@@ -1,4 +1,4 @@
-MIT License with Conditions
+Software License
 
 Copyright (c) Ian Elario 2023
 
@@ -10,7 +10,7 @@ of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+furnished to do so, including for commercial purposes, subject to the following conditions:
 
 1. You can not upload compiled DLLs of this code to other websites and/or
 include them directly with your mod files (instead you must link them
@@ -18,14 +18,14 @@ to this mod's NexusMods page).
 
 2. You can not copyright this work as your own. You must instead credit
 either Ian_E (for the updated version) or doodlez (for the original)
-and include a link to the NexusMods page respectively).
+and include a link to the NexusMods page respectively.
 
-3. You can fork this project and make any changes you desire, but can not
-upload your changes as a new Mod to NexusMods unless consiterable and fundamental
-changes are made to the code. This subsection (3), does not apply if this mod
-is considered abandoned (either by a public statement from Ian Elario or
-one (1) week following a failure to upload an updated version of this mod
-for two (2) consecutive StarField releases).
+3. You can fork this project, make any changes you desire, and subject to these conditions, otherwise exploit your rights under this license to their fullest legal 
+extent, but can not upload your changes as a new Mod to NexusMods 
+unless consiterable and fundamental changes are made to the code. This subsection
+(3), does not apply if this mod is considered abandoned (either by a public 
+statement from Ian Elario or one (1) week following a failure to upload an updated 
+version of this mod for two (2) consecutive StarField releases).
 
 4. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -35,7 +35,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-5. The above copyright notice and this permission notice shall be included in all
+5. This license and your use of this softwear are governed by and construed in accordance with the laws of the State of California applicable to agreements made and to be entirely performed within the the State of California, without regard to its conflict of law principles. There
+are no oral agreements between the parties of this license. If any part of this Agreement is determined by a court to be unenforceable, the rest will remain in effect.
+
+6. The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
-Last Updated: 02/13/2024
+Last Updated: 02/21/2024
