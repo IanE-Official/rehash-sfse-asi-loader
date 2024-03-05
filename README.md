@@ -44,7 +44,7 @@ To build from source (unrecommended):
 git clone https://github.com/IanE-Official/rehash-sfse-asi-loader.git sfse-asi-loader
 cd sfse-asi-loader
 git submodule init
-git submodule update --remote
+git submodule update
 cd extern/vcpkg
 ./bootstrap-vcpkg.bat
 vcpkg integrate install
