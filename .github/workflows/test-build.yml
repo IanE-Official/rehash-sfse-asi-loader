@@ -38,4 +38,6 @@ jobs:
         run: ${{ github.workspace }}/extern/vcpkg/vcpkg integrate install
       
       - name: Build
-        run: pwsh ./build-release.ps1
+        run: |
+          pwsh ./build-release.ps1
+          if ($LASTEXITCODE -ne 0) { exit 1 }
