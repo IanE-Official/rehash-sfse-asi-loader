@@ -35,13 +35,15 @@ jobs:
           submodules: 'recursive'  
 
       - name: Bootstrap vcpkg
-        run: ${{ github.workspace }}/extern/vcpkg/bootstrap-vcpkg.bat
+        run: |
+          ${{ github.workspace }}/extern/vcpkg/bootstrap-vcpkg.bat | tee bootstrap.log
 
       - name: Integrate vcpkg
-        run: ${{ github.workspace }}/extern/vcpkg/vcpkg integrate install
+        run: |
+          ${{ github.workspace }}/extern/vcpkg/vcpkg integrate install | tee integrate.log
       
       - name: Build
         run: |
-          pwsh ./build-release.ps1
+          pwsh ./build-release.ps1 | tee build.log
           if ($LASTEXITCODE -ne 0) { exit 1 }
           if (Select-String -Path .\build.log -Pattern "cannot|error [a-zA-Z0-9]") { exit 1 }
