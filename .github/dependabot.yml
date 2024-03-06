@@ -9,9 +9,15 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-
+    ignore:
+      # Ignore updates for DKUtil (Keep at 9322cf0 for Now)
+      - dependency-name: "DKUtil"
+      
   - package-ecosystem: "github-actions"
     # repository root
     directory: "/"
     schedule:
       interval: "weekly"
+    ignore:
+      # Ignore updates for DKUtil (Keep at 9322cf0 for Now)
+      - dependency-name: "DKUtil"
