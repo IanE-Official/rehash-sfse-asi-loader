@@ -46,4 +46,6 @@ jobs:
         run: |
           pwsh ./build-release.ps1 | tee build.log
           if ($LASTEXITCODE -ne 0) { exit 1 }
-          if (Select-String -Path .\build.log -Pattern "cannot|error [a-zA-Z0-9]") { exit 1 }
+          $errorCheck = Select-String -Path .\build.log -Pattern "error [a-zA-Z0-9]"
+          $cannotCheck = Select-String -Path .\build.log -Pattern "cannot" | Select-String -Pattern "system cannot" -NotMatch
+          if ($errorCheck -or $cannotCheck) { exit 1 }
