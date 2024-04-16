@@ -1,4 +1,4 @@
-name: clang-format-disaptched
+name: dispatched-clang-format
 
 on:
   workflow_dispatch:
