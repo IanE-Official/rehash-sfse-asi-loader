@@ -1,7 +1,7 @@
-name: clang-format
+name: clang-format-disaptched
 
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - uses: DoozyX/clang-format-lint-action@d3c7f85989e3b6416265a0d12f8b4a8aa8b0c4ff
+    - uses: DoozyX/clang-format-lint-action@d3c7f85
       with:
         source: '.'
         exclude: './docs'
