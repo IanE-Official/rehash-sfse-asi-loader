@@ -1,0 +1,47 @@
+name: dispatched-test-build-artifact
+
+on:
+  workflow_dispatch:
+
+###############################################################################
+# Add this section to your workflow file does not already have it to enable
+# the job to write the dependency metadata.
+###############################################################################
+permissions:
+  contents: write
+
+###############################################################################
+# Add these environment variables to your workflow to enable the vcpkg
+# dependency graph integration.
+###############################################################################
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  cmake:
+    runs-on: windows-latest
+
+    # These steps assume an appropriate version of vcpkg is listed as a
+    # submodule in your git repo. If it is not, you must update this workflow
+    # to obtain it.
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'  
+
+      - name: Bootstrap vcpkg
+        run: |
+          ${{ github.workspace }}/extern/vcpkg/bootstrap-vcpkg.bat | tee bootstrap.log
+
+      - name: Integrate vcpkg
+        run: |
+          ${{ github.workspace }}/extern/vcpkg/vcpkg integrate install | tee integrate.log
+      
+      - name: Build
+        run: |
+          pwsh ./build-release.ps1 | tee build.log
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+          $errorCheck = Select-String -Path .\build.log -Pattern "error [a-zA-Z0-9]"
+          $cannotCheck = Select-String -Path .\build.log -Pattern "cannot" | Select-String -Pattern "system cannot" -NotMatch
+          if ($errorCheck -or $cannotCheck) { exit 1 }
