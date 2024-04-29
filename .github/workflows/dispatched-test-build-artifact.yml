@@ -47,7 +47,7 @@ jobs:
           if ($errorCheck -or $cannotCheck) { exit 1 }
 
       - name: Set random variables for archive name
-        uses: joellefkowitz/random-env@v1.0.0
+        uses: joellefkowitz/random-env@v1.3.0
         with:
           names: RANDOM_ENV
 
