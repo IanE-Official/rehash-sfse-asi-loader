@@ -1,26 +1,29 @@
 #include "SFSE/Stub.h"
 #include <codecvt>
 
-//MIT License
+// MIT License
 //
-//    Copyright(c) 2018 ThirteenAG
+//     Copyright(c) 2018 ThirteenAG
 //
-//    Permission is hereby granted,
-//    free of charge, to any person obtaining a copy of this software and associated documentation files(the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and / or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions :
+//     Permission is hereby granted,
+//     free of charge, to any person obtaining a copy of this software and
+//     associated documentation files(the "Software"), to deal in the Software
+//     without restriction, including without limitation the rights to use,
+//     copy, modify, merge, publish, distribute, sublicense, and / or sell
+//     copies of the Software, and to permit persons to whom the Software is
+//     furnished to do so, subject to the following conditions :
 //
-//    The above copyright notice and this permission notice shall be included in all copies
-//    or
-//    substantial portions of the Software.
+//     The above copyright notice and this permission notice shall be included
+//     in all copies or substantial portions of the Software.
 //
-//    THE SOFTWARE IS PROVIDED "AS IS",
-//    WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE
-//    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-//    DAMAGES OR OTHER
-//    LIABILITY,
-//    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-//    SOFTWARE.
+//     THE SOFTWARE IS PROVIDED "AS IS",
+//     WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+//     LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+//     PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+//     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+//     AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+//     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//     SOFTWARE.
 
 DLLEXPORT constinit auto SFSEPlugin_Version = []() noexcept {
 	SFSE::PluginVersionData data{};
@@ -31,8 +34,10 @@ DLLEXPORT constinit auto SFSEPlugin_Version = []() noexcept {
 	data.UsesSigScanning(true);
 	data.UsesAddressLibrary(true);
 	data.HasNoStructUse(true);
-	//data.IsLayoutDependent(true);
-	data.CompatibleVersions({ RUNTIME_VERSION_1_8_86, RUNTIME_VERSION_1_9_51, RUNTIME_VERSION_1_9_67, RUNTIME_VERSION_1_9_71, RUNTIME_VERSION_1_10_31, RUNTIME_VERSION_1_10_31 });
+	// data.IsLayoutDependent(true);
+	data.CompatibleVersions({ RUNTIME_VERSION_1_8_86, RUNTIME_VERSION_1_9_51,
+		RUNTIME_VERSION_1_9_67, RUNTIME_VERSION_1_9_71,
+		RUNTIME_VERSION_1_10_31, RUNTIME_VERSION_1_10_31 });
 
 	return data;
 }();
@@ -112,13 +117,17 @@ void FindFiles(WIN32_FIND_DATAW* fd)
 
 						if (h == NULL) {
 							auto e = GetLastError();
-							if (e != ERROR_DLL_INIT_FAILED && e != ERROR_BAD_EXE_FORMAT)  // In case dllmain returns false or IMAGE_MACHINE is not compatible
+							if (e != ERROR_DLL_INIT_FAILED &&
+								e != ERROR_BAD_EXE_FORMAT)  // In case dllmain returns false or
+							// IMAGE_MACHINE is not compatible
 							{
 								ERROR("Failed to load plugin {} : Error {}", ws2s(path), e);
 							} else if (e != ERROR_DLL_INIT_FAILED) {
-								INFO("Failed to load plugin {} : ERROR_DLL_INIT_FAILED", ws2s(path));
+								INFO("Failed to load plugin {} : ERROR_DLL_INIT_FAILED",
+									ws2s(path));
 							} else {
-								INFO("Failed to load plugin {} : ERROR_BAD_EXE_FORMAT", ws2s(path));
+								INFO("Failed to load plugin {} : ERROR_BAD_EXE_FORMAT",
+									ws2s(path));
 							}
 						} else {
 							INFO("Loaded plugin successfully");
@@ -144,7 +153,8 @@ void LoadPlugins()
 {
 	auto oldDir = GetCurrentDirectoryW();  // Store the current directory
 
-	auto szSelfPath = GetModuleFileNameW(nullptr).substr(0, GetModuleFileNameW(nullptr).find_last_of(L"/\\") + 1);
+	auto szSelfPath = GetModuleFileNameW(nullptr).substr(
+		0, GetModuleFileNameW(nullptr).find_last_of(L"/\\") + 1);
 	SetCurrentDirectoryW(szSelfPath.c_str());
 
 	WIN32_FIND_DATAW fd;
