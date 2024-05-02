@@ -8,7 +8,8 @@ updates:
     # Files stored in repository root
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
+      # I already check daily for SFSE updates, so only other depends bump monthly.
     ignore:
       # Ignore updates for DKUtil (Keep at 9322cf0 for Now)
       - dependency-name: "DKUtil"
@@ -17,7 +18,7 @@ updates:
     # repository root
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     ignore:
       # Ignore updates for DKUtil (Keep at 9322cf0 for Now)
       - dependency-name: "DKUtil"
