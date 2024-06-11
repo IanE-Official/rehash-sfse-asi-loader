@@ -5,3 +5,4 @@
 *.timestamp
 deploy-*.ps1
 Plugin/dist
+.idea/
