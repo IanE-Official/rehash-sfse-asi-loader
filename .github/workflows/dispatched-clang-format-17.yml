@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - uses: DoozyX/clang-format-lint-action@d3c7f85
+    - uses: DoozyX/clang-format-lint-action@caa179272c6ee7f1d25dfb503ee0c410c26ebd98
       with:
         source: '.'
         exclude: './docs'
