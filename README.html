@@ -1096,13 +1096,13 @@ body .markdown-body
 <li><a href="https://github.com/ianpatt/sfse">SFSE</a></li>
 <li>Init &amp; update with git submodule</li>
 <li><a href="https://github.com/PowerShell/PowerShell/releases/latest">PowerShell</a></li>
-<li>Runs scripts which automate building</li>
+<li>Runs scripts which automate building.</li>
 <li><a href="https://github.com/microsoft/vcpkg">Vcpkg</a></li>
 <li>Handles non-submodule dependency packages</li>
 <li><a href="https://visualstudio.microsoft.com/">Visual Studio Community 2022</a></li>
 <li>Desktop development with C++. <strong>Note that VSCode will not build properly at this time.</strong></li>
 <li><a href="#-deployment">Starfield Steam Distribution</a></li>
-<li>Add the environment variable <code>SFPath</code> with the value as the path to the game installation</li>
+<li>Add the environment variable <code>SFPath</code> with the value as the path to the game installation for auto-deployment.</li>
 </ul>
 <h3 id="register-visual-studio-community-2022-as-a-generator">💻 Register Visual Studio Community 2022 as a Generator<a class="headerlink" href="#register-visual-studio-community-2022-as-a-generator" title="Permanent link"></a></h3>
 <ul>
@@ -1121,7 +1121,7 @@ cd extern/vcpkg
 vcpkg integrate install
 cd ..
 cd ..
-.\build-release.ps1
+pwsh build-release.ps1
 </pre></div>
 
 <blockquote>
@@ -1142,4 +1142,3 @@ where {version} is set to the newest version of starfield you are trying to buil
 <li><a href="https://github.com/Ryan-rsm-McKenzie/CommonLibSSE">Ryan for his commonLibSSE code</a> which was referenced in DKUtil.</li>
 <li><a href="https://github.com/ianpatt/sfse">ianpatt&rsquo;s starfield script extender</a>.</li>
 <li><a href="https://github.com/gottyduke/PluginTemplate">Original plugin template</a></li>
-</ul></article></body></html>

@@ -6,3 +6,4 @@
 deploy-*.ps1
 Plugin/dist
 .idea/
+gradle/
