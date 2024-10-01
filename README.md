@@ -54,7 +54,7 @@ pwsh build-release.ps1
 ```
 
 > If you are building for a Starfield **_other than the latest_**, use `git clone https://github.com/IanE-Official/rehash-sfse-asi-loader.git --branch {version} sfse-asi-loader`
-> where {version} is set to the newest version of starfield you are trying to build for (currently 1.13.61).
+> where {version} is set to the newest version of starfield you are trying to build for (currently 1.14.70).
 
 ### 📦 Deployment
 
