@@ -269,23 +269,23 @@ namespace SFSE
 		}
 		constexpr void UsesAddressLibrary(int a_value) noexcept
 		{
-		    switch (a_value) {
-		        case 0:
-		            addressIndependence.set(AddressIndependence::kNone);
-		            break;
-		        case 1:
-		            addressIndependence.set(AddressIndependence::kSignatureScanning);
-		            break;
-		        case 2:
-		            addressIndependence.set(AddressIndependence::kAddressLibrary);
-		            break;
-		        case 4:
-		            addressIndependence.set(AddressIndependence::kAddressLibraryV2);
-		            break;
-		        default:
-		            // Invalid input; do nothing or handle error
-		            break;
-		    }
+			switch (a_value) {
+			case 0:
+				addressIndependence.set(AddressIndependence::kNone);
+				break;
+			case 1:
+				addressIndependence.set(AddressIndependence::kSignatureScanning);
+				break;
+			case 2:
+				addressIndependence.set(AddressIndependence::kAddressLibrary);
+				break;
+			case 4:
+				addressIndependence.set(AddressIndependence::kAddressLibraryV2);
+				break;
+			default:
+				// Invalid input; do nothing or handle error
+				break;
+			}
 		}
 		constexpr void HasNoStructUse(bool a_value) noexcept
 		{
