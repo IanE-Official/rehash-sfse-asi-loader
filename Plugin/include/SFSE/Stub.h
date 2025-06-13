@@ -231,8 +231,8 @@ namespace SFSE
 			// signature matching only
 			kSignatureScanning = 1 << 0,
 			// Address Library v1 (https://www.nexusmods.com/starfield/mods/3256)
-			kAddressLibrary = 1 << 1,
-			// Address Library for 1.15.216+
+			kAddressLibrary = 1 << 0,
+			// Address Library v2: 1 << 2 for V2
 			kAddressLibraryV2 = 1 << 2,
 		};
 
@@ -269,23 +269,7 @@ namespace SFSE
 		}
 		constexpr void UsesAddressLibrary(int a_value) noexcept
 		{
-			switch (a_value) {
-			case 0:
-				addressIndependence.set(AddressIndependence::kNone);
-				break;
-			case 1:
-				addressIndependence.set(AddressIndependence::kSignatureScanning);
-				break;
-			case 2:
-				addressIndependence.set(AddressIndependence::kAddressLibrary);
-				break;
-			case 4:
-				addressIndependence.set(AddressIndependence::kAddressLibraryV2);
-				break;
-			default:
-				// Invalid input; do nothing or handle error
-				break;
-			}
+			addressIndependence.set(AddressIndependence::kAddressLibraryV2);
 		}
 		constexpr void HasNoStructUse(bool a_value) noexcept
 		{
