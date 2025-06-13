@@ -231,9 +231,7 @@ namespace SFSE
 			// signature matching only
 			kSignatureScanning = 1 << 0,
 			// Address Library v1 (https://www.nexusmods.com/starfield/mods/3256)
-			kAddressLibrary = 1 << 0,
-			// Address Library v2: 1 << 2 for V2
-			kAddressLibraryV2 = 1 << 2,
+			kAddressLibrary = 1 << 1,
 		};
 
 		// describe your structure compatibility
@@ -244,10 +242,6 @@ namespace SFSE
 			kNoStructs = 1 << 0,
 			// works with the structure layout the game shipped with
 			kInitialLayout = 1 << 1,
-			// works with 1.8.86+ structure layout
-			k1_8_86_Layout = 1 << 2,
-			// works with 1.14.70+ structure layout
-			k1_14_70_Layout = 1 << 3,
 			// additional bits will be added here when breaking changes happen
 		};
 
@@ -267,9 +261,9 @@ namespace SFSE
 		{
 			addressIndependence.set(AddressIndependence::kSignatureScanning);
 		}
-		constexpr void UsesAddressLibrary(int a_value) noexcept
+		constexpr void UsesAddressLibrary(bool a_value) noexcept
 		{
-			addressIndependence.set(AddressIndependence::kAddressLibraryV2);
+			addressIndependence.set(AddressIndependence::kAddressLibrary);
 		}
 		constexpr void HasNoStructUse(bool a_value) noexcept
 		{
