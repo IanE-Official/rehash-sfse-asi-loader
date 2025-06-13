@@ -232,6 +232,8 @@ namespace SFSE
 			kSignatureScanning = 1 << 0,
 			// Address Library v1 (https://www.nexusmods.com/starfield/mods/3256)
 			kAddressLibrary = 1 << 1,
+			// Address Library v2: 1 << 2 for V2
+			kAddressLibraryV2 = 1 << 2,
 		};
 
 		// describe your structure compatibility
@@ -242,6 +244,10 @@ namespace SFSE
 			kNoStructs = 1 << 0,
 			// works with the structure layout the game shipped with
 			kInitialLayout = 1 << 1,
+			// works with 1.8.86+ structure layout
+			k1_8_86_Layout = 1 << 2,
+			// works with 1.14.70+ structure layout
+			kStructureIndependence_1_14_70_Layout = 1 << 3,
 			// additional bits will be added here when breaking changes happen
 		};
 
@@ -263,7 +269,7 @@ namespace SFSE
 		}
 		constexpr void UsesAddressLibrary(bool a_value) noexcept
 		{
-			addressIndependence.set(AddressIndependence::kAddressLibrary);
+			addressIndependence.set(AddressIndependence::kAddressLibraryV2);
 		}
 		constexpr void HasNoStructUse(bool a_value) noexcept
 		{
@@ -284,16 +290,16 @@ namespace SFSE
 			xseMinimum = a_version;
 		}
 
-		const std::uint32_t                     dataVersion{ kVersion };                                 // shipped with xse
-		std::uint32_t                           pluginVersion = 0;                                       // version number of your plugin
-		char                                    pluginName[256] = {};                                    // null-terminated ASCII plugin name (please make this recognizable to users)
-		char                                    author[256] = {};                                        // null-terminated ASCII plugin author name
-		dku::enumeration<AddressIndependence>   addressIndependence{ AddressIndependence::kNone };       // describe how you find your addressese using the kAddressIndependence_ enums
-		dku::enumeration<StructureIndependence> structureCompatibility{ StructureIndependence::kNone };  // describe how you handle structure layout using the kStructureIndependence_ enums
-		std::uint32_t                           compatibleVersions[16] = {};                             // list of compatible versions
-		std::uint32_t                           xseMinimum = 0;                                          // minimum version of the script extender required
-		const std::uint32_t                     reservedNonBreaking = 0;                                 // set to 0
-		const std::uint32_t                     reservedBreaking = 0;                                    // set to 0
+		const std::uint32_t                     dataVersion{ kVersion };                                        // shipped with xse
+		std::uint32_t                           pluginVersion = 0;                                              // version number of your plugin
+		char                                    pluginName[256] = {};                                           // null-terminated ASCII plugin name (please make this recognizable to users)
+		char                                    author[256] = {};                                               // null-terminated ASCII plugin author name
+		dku::enumeration<AddressIndependence>   addressIndependence{ AddressIndependence::kAddressLibraryV2 };  // describe how you find your addressese using the kAddressIndependence_ enums
+		dku::enumeration<StructureIndependence> structureCompatibility{ StructureIndependence::kNone };         // describe how you handle structure layout using the kStructureIndependence_ enums
+		std::uint32_t                           compatibleVersions[16] = {};                                    // list of compatible versions
+		std::uint32_t                           xseMinimum = 0;                                                 // minimum version of the script extender required
+		const std::uint32_t                     reservedNonBreaking = 0;                                        // set to 0
+		const std::uint32_t                     reservedBreaking = 0;                                           // set to 0
 
 	private:
 		static constexpr void SetCharBuffer(
