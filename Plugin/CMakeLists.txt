@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.26)
 # info
 project(
   SFSEAsiLoader
-  VERSION 1.15.26
+  VERSION 1.15.27
   LANGUAGES CXX)
 
 # boiler
