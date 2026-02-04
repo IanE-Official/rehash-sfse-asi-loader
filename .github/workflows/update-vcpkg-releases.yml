@@ -27,11 +27,24 @@ jobs:
       - name: Get latest vcpkg release
         id: latest
         run: |
-          LATEST_TAG=$(curl -s https://api.github.com/repos/microsoft/vcpkg/releases/latest | jq -r .tag_name)
+          LATEST_TAG=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/microsoft/vcpkg/releases/latest | jq -r .tag_name)
+          
+          if [ -z "$LATEST_TAG" ] || [ "$LATEST_TAG" = "null" ]; then
+            echo "Failed to fetch latest vcpkg release"
+            exit 1
+          fi
+          
           echo "tag=$LATEST_TAG" >> $GITHUB_OUTPUT
           
           cd extern/vcpkg
           git fetch --tags
+          
+          if ! git rev-parse "$LATEST_TAG" >/dev/null 2>&1; then
+            echo "Tag $LATEST_TAG not found after fetch"
+            exit 1
+          fi
+          
           LATEST_COMMIT=$(git rev-list -n 1 "$LATEST_TAG")
           echo "commit=$LATEST_COMMIT" >> $GITHUB_OUTPUT
           cd ../..
