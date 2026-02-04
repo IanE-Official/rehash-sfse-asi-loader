@@ -9,6 +9,9 @@ on:
 jobs:
   update-vcpkg:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to checkout and push changes
+      pull-requests: write  # Required to create pull requests
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
