@@ -1,0 +1,81 @@
+name: Update vcpkg to latest release
+
+on:
+  schedule:
+    # Run monthly on the 1st at 00:00 UTC
+    - cron: '0 0 1 * *'
+  workflow_dispatch: # Allow manual triggers
+
+jobs:
+  update-vcpkg:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to checkout and push changes
+      pull-requests: write  # Required to create pull requests
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get current vcpkg commit
+        id: current
+        run: |
+          cd extern/vcpkg
+          CURRENT_COMMIT=$(git rev-parse HEAD)
+          echo "commit=$CURRENT_COMMIT" >> $GITHUB_OUTPUT
+          cd ../..
+
+      - name: Get latest vcpkg release
+        id: latest
+        run: |
+          LATEST_TAG=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/microsoft/vcpkg/releases/latest | jq -r .tag_name)
+          
+          if [ -z "$LATEST_TAG" ] || [ "$LATEST_TAG" = "null" ]; then
+            echo "Failed to fetch latest vcpkg release"
+            exit 1
+          fi
+          
+          echo "tag=$LATEST_TAG" >> $GITHUB_OUTPUT
+          
+          cd extern/vcpkg
+          git fetch --tags
+          
+          if ! git rev-parse "$LATEST_TAG" >/dev/null 2>&1; then
+            echo "Tag $LATEST_TAG not found after fetch"
+            exit 1
+          fi
+          
+          LATEST_COMMIT=$(git rev-list -n 1 "$LATEST_TAG")
+          echo "commit=$LATEST_COMMIT" >> $GITHUB_OUTPUT
+          cd ../..
+
+      - name: Update vcpkg submodule if new release
+        id: update
+        run: |
+          if [ "${{ steps.current.outputs.commit }}" != "${{ steps.latest.outputs.commit }}" ]; then
+            cd extern/vcpkg
+            git checkout ${{ steps.latest.outputs.tag }}
+            cd ../..
+            echo "updated=true" >> $GITHUB_OUTPUT
+            echo "New vcpkg release ${{ steps.latest.outputs.tag }} available"
+          else
+            echo "updated=false" >> $GITHUB_OUTPUT
+            echo "Already on latest vcpkg release"
+          fi
+
+      - name: Create Pull Request
+        if: steps.update.outputs.updated == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: update vcpkg to release ${{ steps.latest.outputs.tag }}'
+          title: 'chore: update vcpkg to release ${{ steps.latest.outputs.tag }}'
+          body: |
+            Updates vcpkg submodule to the latest release version ${{ steps.latest.outputs.tag }}.
+            
+            This PR was automatically created by the update-vcpkg-releases workflow.
+          branch: update-vcpkg-${{ steps.latest.outputs.tag }}
+          delete-branch: true
