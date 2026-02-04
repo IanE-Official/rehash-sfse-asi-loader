@@ -10,7 +10,10 @@ updates:
     schedule:
       interval: "monthly"
       # I already check daily for SFSE updates, so only other depends bump monthly.
-      
+    ignore:
+      # Ignore vcpkg commit updates; only update when new tagged releases are available
+      - dependency-name: "extern/vcpkg"
+
   - package-ecosystem: "github-actions"
     # repository root
     directory: "/"
