@@ -13,7 +13,7 @@ updates:
     ignore:
       # Ignore vcpkg commit updates; only update when new tagged releases are available
       - dependency-name: "extern/vcpkg"
-      
+
   - package-ecosystem: "github-actions"
     # repository root
     directory: "/"
