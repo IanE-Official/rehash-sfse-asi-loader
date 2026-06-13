@@ -1099,12 +1099,12 @@ body .markdown-body
 <li>Runs scripts which automate building.</li>
 <li><a href="https://github.com/microsoft/vcpkg">Vcpkg</a></li>
 <li>Handles non-submodule dependency packages</li>
-<li><a href="https://visualstudio.microsoft.com/">Visual Studio Community 2022</a></li>
-<li>Desktop development with C++. <strong>Note that VSCode will not build properly at this time.</strong></li>
+<li><a href="https://visualstudio.microsoft.com/">Visual Studio Community 2026</a></li>
+<li>Desktop development with C++. <strong>Note that VSCode will not build properly at this time. Also, we use toolset v143 (from VS2022)</strong></li>
 <li><a href="#-deployment">Starfield Steam Distribution</a></li>
 <li>Add the environment variable <code>SFPath</code> with the value as the path to the game installation for auto-deployment.</li>
 </ul>
-<h3 id="register-visual-studio-community-2022-as-a-generator">💻 Register Visual Studio Community 2022 as a Generator<a class="headerlink" href="#register-visual-studio-community-2022-as-a-generator" title="Permanent link"></a></h3>
+<h3 id="register-visual-studio-community-2026-as-a-generator">💻 Register Visual Studio Community 2026 as a Generator<a class="headerlink" href="#register-visual-studio-community-2026-as-a-generator" title="Permanent link"></a></h3>
 <ul>
 <li>Open <code>x64 Native Tools Command Prompt</code></li>
 <li>Run <code>cmake</code></li>
@@ -1112,7 +1112,8 @@ body .markdown-body
 </ul>
 <h3 id="building">🔨 Building<a class="headerlink" href="#building" title="Permanent link"></a></h3>
 <p>To build from source (unrecommended):</p>
-<div class="highlight"><pre>git clone https://github.com/IanE-Official/rehash-sfse-asi-loader.git sfse-asi-loader
+<div class="highlight"><pre>Open x64 Native Tools Command Prompt
+git clone https://github.com/IanE-Official/rehash-sfse-asi-loader.git sfse-asi-loader
 cd sfse-asi-loader
 git submodule init
 git submodule update
