@@ -25,12 +25,12 @@ SFSE plugin which safely preloads ASI mods with logging forked from Doodlez by I
   - Runs scripts which automate building.
 - [Vcpkg](https://github.com/microsoft/vcpkg)
   - Handles non-submodule dependency packages
-- [Visual Studio Community 2022](https://visualstudio.microsoft.com/)
-  - Desktop development with C++. **Note that VSCode will not build properly at this time.**
+- [Visual Studio Community 2026](https://visualstudio.microsoft.com/)
+  - Desktop development with C++. **Note that VSCode will not build properly at this time. Also, we use toolset v143 (from VS2022)**
 - [Starfield Steam Distribution](#-deployment)
   - Add the environment variable `SFPath` with the value as the path to the game installation for auto-deployment.
 
-### 💻 Register Visual Studio Community 2022 as a Generator
+### 💻 Register Visual Studio Community 2026 as a Generator
 
 - Open `x64 Native Tools Command Prompt`
 - Run `cmake`
@@ -41,6 +41,7 @@ SFSE plugin which safely preloads ASI mods with logging forked from Doodlez by I
 To build from source (unrecommended):
 
 ```
+Open x64 Native Tools Command Prompt
 git clone https://github.com/IanE-Official/rehash-sfse-asi-loader.git sfse-asi-loader
 cd sfse-asi-loader
 git submodule init
@@ -54,7 +55,7 @@ pwsh build-release.ps1
 ```
 
 > If you are building for a Starfield **_other than the latest_**, use `git clone https://github.com/IanE-Official/rehash-sfse-asi-loader.git --branch {version} sfse-asi-loader`
-> where {version} is set to the newest version of starfield you are trying to build for (currently 1.16.242).
+> where {version} is set to the newest version of starfield you are trying to build for (currently 1.16.244).
 
 ### 📦 Deployment
 

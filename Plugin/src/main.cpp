@@ -35,7 +35,7 @@ DLLEXPORT constinit auto SFSEPlugin_Version = []() noexcept {
 	data.UsesAddressLibrary(true);
 	data.HasNoStructUse(true);
 	// data.IsLayoutDependent(true);
-	data.CompatibleVersions({ RUNTIME_VERSION_1_15_216, RUNTIME_VERSION_1_15_222, RUNTIME_VERSION_1_16_236, RUNTIME_VERSION_1_16_242 });
+	data.CompatibleVersions({ RUNTIME_VERSION_1_15_216, RUNTIME_VERSION_1_15_222, RUNTIME_VERSION_1_16_236, RUNTIME_VERSION_1_16_242, RUNTIME_VERSION_1_16_244 });
 
 	return data;
 }();
