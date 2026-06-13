@@ -56,7 +56,9 @@
       "name": "generator-msvc",
       "hidden": true,
       "inherits": "x64",
-      "generator": "Visual Studio 17 2022"
+      "generator": "Visual Studio 18 2026",
+      "architecture": { "value": "x64", "strategy": "set" },
+      "toolset": { "value": "v143", "strategy": "set" }
     },
     {
       "name": "compiler-msvc",
