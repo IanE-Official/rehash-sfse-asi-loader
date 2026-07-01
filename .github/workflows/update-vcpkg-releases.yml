@@ -14,7 +14,7 @@ jobs:
       pull-requests: write  # Required to create pull requests
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           submodules: true
           token: ${{ secrets.GITHUB_TOKEN }}
